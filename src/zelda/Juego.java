@@ -117,7 +117,10 @@ public class Juego {
             if(c.getSegundaPalabra().equalsIgnoreCase("oeste")){
                 aux=habitacionActual.getSalida("oeste");
                 habitacionActual=aux;
-            }           
+            } 
+            if(habitacionActual.getDescripcion().equals("Salida NORTE 3")){
+                   return;         
+            }
         habitacionActual.getDescripcionLarga();
     }
     
