@@ -17,9 +17,11 @@ public class Habitacion {
     private Habitacion salidaSur;
     private Habitacion salidaEste;
     private Habitacion salidaOeste;
+    private boolean descubierta;
     
     public Habitacion(String descripcion){
         this.descripcion=descripcion;
+        descubierta=false;
     }
     
     public void setSalida(String direccion, Habitacion habitacion){
@@ -115,6 +117,13 @@ public class Habitacion {
             return 4;
         }
         return 0;
+    }
+    public void descubrirHabitacion(){
+        descubierta=true;
+    }
+
+    public boolean isDescubierta() {
+        return descubierta;
     }
     
     private boolean comprobarDireccion(String direccion){

@@ -32,5 +32,6 @@ public class PalabrasComando {
         comandos.add("ir");
         comandos.add("ayuda");
         comandos.add("fin");
+        comandos.add("mapa");
     }
 }

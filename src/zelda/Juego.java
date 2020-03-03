@@ -5,6 +5,7 @@
  */
 package zelda;
 
+import java.util.HashSet;
 import java.util.Scanner;
 
 /**
@@ -18,7 +19,8 @@ public class Juego {
     private int bucle;
     private int princesa;
     private CodigoSecreto codigo;
-
+    
+    
     public Juego() {
         bucle = 0;
         princesa = 0;
@@ -27,7 +29,7 @@ public class Juego {
         crearHabitaciones();
     }
 
-    public void crearHabitaciones() {
+    private void crearHabitaciones() {
         Habitacion hab1 = new Habitacion("Habitacion 1");
         Habitacion hab2 = new Habitacion("Habitacion 2");
         Habitacion hab7 = new Habitacion("Habitacion 3");
@@ -63,6 +65,8 @@ public class Juego {
         hab7.setSalida("salidaNorte", tesoro);
         tesoro.setSalida("salidaSur", hab7);
         habitacionActual = inicial;
+        
+       
     }
 
     private void bienvenido() {
@@ -100,7 +104,7 @@ public class Juego {
                     descubrirCodigo();
                 }
             } else {
-                System.out.println("Comando o lugar no es válido.");
+                System.out.println("El comando o lugar no es válido.");
             }
 
         }
@@ -138,7 +142,10 @@ public class Juego {
         if (c.getComando().equalsIgnoreCase("fin")) {
             fin(c);
         }
-        if (c.getComando().equalsIgnoreCase("ayuda") || c.getComando().equalsIgnoreCase("fin")) {
+        if (c.getComando().equalsIgnoreCase("mapa")) {
+            verMapa();
+        }
+        if (c.getComando().equalsIgnoreCase("ayuda") || c.getComando().equalsIgnoreCase("fin") || c.getComando().equalsIgnoreCase("mapa")) {
             return true;
         }
         if (!transformar.getLugares().contains(c.getSegundaPalabra())) {
@@ -162,6 +169,7 @@ public class Juego {
                 System.out.println("Salida incorrecta");
             } else {
                 habitacionActual = aux;
+                habitacionActual.descubrirHabitacion();
             }
 
         }
@@ -172,6 +180,7 @@ public class Juego {
                 System.out.println("Salida incorrecta");
             } else {
                 habitacionActual = aux;
+                habitacionActual.descubrirHabitacion();
             }
         }
         if (c.getSegundaPalabra().equalsIgnoreCase("este")) {
@@ -180,6 +189,7 @@ public class Juego {
                 System.out.println("Salida incorrecta");
             } else {
                 habitacionActual = aux;
+                habitacionActual.descubrirHabitacion();
             }
         }
         if (c.getSegundaPalabra().equalsIgnoreCase("oeste")) {
@@ -188,6 +198,7 @@ public class Juego {
                 System.out.println("Salida incorrecta");
             } else {
                 habitacionActual = aux;
+                habitacionActual.descubrirHabitacion();
             }
         }
         if (habitacionActual.getDescripcion().equals("Habitacion inicial")
@@ -233,4 +244,11 @@ public class Juego {
         }
 
     }
+    
+    private void verMapa(){
+        Mapa m=new Mapa();
+    }
+
+    
+    
 }

@@ -28,7 +28,7 @@ public class Transformar {
         
         
         System.out.print("Introduce un comando: "
-                + "[Ir - Ayuda - Fin]: ");
+                + "[Ir - Ayuda - Mapa - Fin]: ");
         auxCom = sc.next();
         
         if(!auxCom.equalsIgnoreCase("ir")){         
