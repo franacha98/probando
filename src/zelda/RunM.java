@@ -7,13 +7,11 @@ package zelda;
 
 /**
  *
- * @author Fran
+ * @author Vespertino
  */
-public class Run {
+public class RunM {
     public static void main(String[] args) {
-        Juego zelda=new Juego();
-
-        zelda.jugar();
-        
+        Muerto m = new Muerto();
     }
+   
 }

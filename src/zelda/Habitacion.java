@@ -48,18 +48,18 @@ public class Habitacion {
     
     public void getDescripcionLarga(){
         StringBuilder sb=new StringBuilder();
-        sb.append("Estás en "+this.getDescripcion()+" y las salidas posibles son: ");
+        sb.append("Estás en "+this.getDescripcion()+" y las salidas posibles son: \n");
         if(salidaNorte!=null){
-            sb.append("-"+salidaNorte.getDescripcion()+"\n");
+            sb.append("- Salida norte\n");
         }
         if(salidaSur!=null){
-            sb.append("-"+salidaSur.getDescripcion()+"\n");
+            sb.append("- Salida sur\n");
         }
         if(salidaEste!=null){
-            sb.append("-"+salidaEste.getDescripcion()+"\n");
+            sb.append("- Salida este\n");
         }
         if(salidaOeste!=null){
-            sb.append("-"+salidaOeste.getDescripcion()+"\n");
+            sb.append("- Salida oeste\n");
         }
         
         System.out.println(sb.toString());
